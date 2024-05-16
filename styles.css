@@ -1,0 +1,51 @@
+/* styles.css */
+* {
+    overflow: hidden;
+    background-color: black;
+}
+
+.wrapper {
+    display: flex;
+    width: auto;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* Removed initial animation */
+}
+
+@keyframes bounce {
+    to {
+        translate: 0 20px;
+    }
+}
+
+@keyframes spin {
+    to {
+        rotate: -1turn;
+    }
+}
+
+.pedro {
+    border-radius: 50%;
+    /* Removed initial animation */
+    scale: 0.4;
+    visibility: hidden; /* Initially invisible */
+}
+
+.animate .pedro {
+    animation: bounce 200ms linear infinite alternate, spin 10s linear infinite;
+    visibility: visible; /* Become visible */
+}
+
+.play-button {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 1000; /* Ensure the button is on top */
+}
