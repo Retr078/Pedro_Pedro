@@ -37,15 +37,32 @@
     visibility: visible; /* Become visible */
 }
 
+/* inspired from gumroad website */
 .play-button {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background-color: green;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+    --bg: #ffffff;
+    --hover-bg: #000000;
+    --hover-text: #ffffff;
+    color: #000000;
     cursor: pointer;
-    font-size: 16px;
-    z-index: 1000; /* Ensure the button is on top */
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
+    position: fixed; /* Change to fixed to position relative to the viewport */
+    top: 50%; /* Position at the vertical center */
+    left: 50%; /* Position at the horizontal center */
+    transform: translate(-50%, -50%); /* Center horizontally and vertically */
+}
+
+.play-button:hover {
+    color: var(--hover-text);
+    transform: translate(-50%, -50%) translate(-0.25rem, -0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+}
+
+.play-button:active {
+    transform: translate(-50%, -50%) translate(0);
+    box-shadow: none;
 }
